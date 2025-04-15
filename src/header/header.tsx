@@ -8,7 +8,7 @@ const Header = () => {
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           
             
-            <img src="src/assets/Images/logo.png" alt="Logo" className="hidden md:block h-[94px] w-[75px]" />
+            <img src="/assets/Images/logo.png" alt="Logo" className="hidden md:block h-[94px] w-[75px]" />
             <img src="src/assets/Images/logo-dark.png" alt="Logo" className="block md:hidden h-[66px] w-[53px]" />
             <div className="hidden md:flex space-x-6">
               <a  className="nav-link">Home</a>
