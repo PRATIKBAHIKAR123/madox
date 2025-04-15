@@ -1,14 +1,14 @@
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
 const properties = [
-  { id: 1,  image:'src/assets/Images/Brands/brand-first.png' },
-    { id: 2, image:'src/assets/Images/Brands/brand.png'},
-    { id: 3,  image:'src/assets/Images/Brands/brand-first.png' },
-    { id: 4, image:'src/assets/Images/Brands/brand.png'},
-    { id: 5,  image:'src/assets/Images/Brands/brand-first.png' },
-    { id: 6, image:'src/assets/Images/Brands/brand.png'},
-    { id: 7,  image:'src/assets/Images/Brands/brand-first.png' },
-    { id: 8, image:'src/assets/Images/Brands/brand.png'},
+  { id: 1,  image:'/assets/Images/Brands/brand-first.png' },
+    { id: 2, image:'/assets/Images/Brands/brand.png'},
+    { id: 3,  image:'/assets/Images/Brands/brand-first.png' },
+    { id: 4, image:'/assets/Images/Brands/brand.png'},
+    { id: 5,  image:'/assets/Images/Brands/brand-first.png' },
+    { id: 6, image:'/assets/Images/Brands/brand.png'},
+    { id: 7,  image:'/assets/Images/Brands/brand-first.png' },
+    { id: 8, image:'/assets/Images/Brands/brand.png'},
   ]
 
 const Brands = () => {

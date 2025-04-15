@@ -14,42 +14,42 @@ const propertyCategories: PortFolio[] = [
   {
     id: 1,
     title: 'Apartments',
-    imageUrl: 'src/assets/Images/Properties/property_listing.jpg',
+    imageUrl: '/assets/Images/Properties/property_listing.jpg',
     listingCount: 17,
     gridClass: 'col-span-2' // Takes 2 columns
   },
   {
     id: 2,
     title: 'Condos',
-    imageUrl: 'src/assets/Images/Properties/dining_table_set.jpg',
+    imageUrl: '/assets/Images/Properties/dining_table_set.jpg',
     listingCount: 8,
     gridClass: ''
   },
   {
     id: 3,
     title: 'Duplexes',
-    imageUrl: 'src/assets/Images/Properties/property_listing_sofa.jpg',
+    imageUrl: '/assets/Images/Properties/property_listing_sofa.jpg',
     listingCount: 0,
     gridClass: ''
   },
   {
     id: 4,
     title: 'Houses',
-    imageUrl: 'src/assets/Images/Lands/3.png',
+    imageUrl: '/assets/Images/Lands/3.png',
     listingCount: 5,
     gridClass: ''
   },
   {
     id: 5,
     title: 'Offices',
-    imageUrl: 'src/assets/Images/Lands/banner.png',
+    imageUrl: '/assets/Images/Lands/banner.png',
     listingCount: 2,
     gridClass: '' 
   },
   {
     id: 6,
     title: 'Villas',
-    imageUrl: 'src/assets/Images/Lands/1.png',
+    imageUrl: '/assets/Images/Lands/1.png',
     listingCount: 4,
     gridClass: 'col-span-2'
   }

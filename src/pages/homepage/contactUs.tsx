@@ -18,7 +18,7 @@ export default function ContactUs() {
           <div className="overflow-hidden">
             <div className="h-64 md:h-[560px]">
               {/* Placeholder for the business person image */}
-              <img src="src/assets/Images/business_professional.jpg" alt="Business Person" className="w-full h-full relative rounded-[15px]" />
+              <img src="/assets/Images/business_professional.jpg" alt="Business Person" className="w-full h-full relative rounded-[15px]" />
             </div>
           </div>
         </div>

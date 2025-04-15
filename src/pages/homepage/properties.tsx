@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const properties = [
-  { id: 1, name: '155 Dalla Homestay', featured:true, image:'src/assets/Images/Properties/house1.jpg', price: '$1,000,000', location: 'New York, NY', beds: 3, baths: 2, sqft: 1500, contact: 'John Doe', postedTime: '2 days ago' },
-  { id: 2, name: 'House In Foxhall Ave', featured:false, image:'src/assets/Images/Properties/house2.jpg' , price: '$1,200,000', location: 'Los Angeles, CA', beds: 4, baths: 3, sqft: 2000 , contact: 'Jane Smith', postedTime: '5 days ago' },
-  { id: 3, name: 'Villa in St San Francisco', featured:false, image:'src/assets/Images/Properties/house3.jpg', price: '$900,000', location: 'Chicago, IL', beds: 2, baths: 1, sqft: 1200 , contact: 'Alice Johnson', postedTime: '1 week ago' },
+  { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Properties/house1.jpg', price: '$1,000,000', location: 'New York, NY', beds: 3, baths: 2, sqft: 1500, contact: 'John Doe', postedTime: '2 days ago' },
+  { id: 2, name: 'House In Foxhall Ave', featured:false, image:'/assets/Images/Properties/house2.jpg' , price: '$1,200,000', location: 'Los Angeles, CA', beds: 4, baths: 3, sqft: 2000 , contact: 'Jane Smith', postedTime: '5 days ago' },
+  { id: 3, name: 'Villa in St San Francisco', featured:false, image:'/assets/Images/Properties/house3.jpg', price: '$900,000', location: 'Chicago, IL', beds: 2, baths: 1, sqft: 1200 , contact: 'Alice Johnson', postedTime: '1 week ago' },
 ];
 
 const Properties = () => {
@@ -58,14 +58,14 @@ const Properties = () => {
                   <div className="absolute bottom-3 right-3 flex gap-2">
                     <a className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center text-white">
                       <img 
-                        src={'src/assets/Images/Icons/List.png'} 
+                        src={'/assets/Images/Icons/List.png'} 
                         alt="Property" 
                         className="h-full absolute"
                       />
                     </a>
                     <a className="w-8 h-8 rounded-full flex items-center justify-center text-white">
                       <img 
-                        src={'src/assets/Images/Icons/magnifier.png'} 
+                        src={'/assets/Images/Icons/magnifier.png'} 
                         alt="Property" 
                         className="h-full absolute"
                       />

@@ -21,7 +21,7 @@ const RealEstateLandingPage = () => {
       {/* Hero Section */}
       <section 
         className="relative h-[260px] md:h-[100vh] bg-cover bg-center flex items-center mt-20 md:mt-0" 
-        style={{ backgroundImage: "url('src/assets/Images/Banners/home-banner.jpg')" }}
+        style={{ backgroundImage: "url('/assets/Images/Banners/home-banner.jpg')" }}
       >
         <div className="absolute inset-0 bg-opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10 text-white text-left">
@@ -42,7 +42,7 @@ const RealEstateLandingPage = () => {
       <SmallbannerSection
   title="Buy A Land Now"
   description="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-  imageUrl="src/assets/Images/Section.jpg"
+  imageUrl="/assets/Images/Section.jpg"
   buttonText="Register Now"
 />
 
@@ -58,7 +58,7 @@ const RealEstateLandingPage = () => {
       <SmallbannerSection
   title="Buy A Property Now"
   description="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-  imageUrl="src/assets/Images/Section.jpg"
+  imageUrl="/assets/Images/Section.jpg"
   buttonText="Register Now"
 />
 
@@ -140,9 +140,9 @@ const RealEstateLandingPage = () => {
               {[...Array(9)].map((_, i) => (
                 <div key={i} className="bg-white text-gray-700 px-2 py-2 rounded flex items-center justify-center">
                   {i % 3 === 0 ? (
-                    <img src='src/assets/Images/Icons/Vector.png' alt="Brand" className="h-4" />
+                    <img src='/assets/Images/Icons/Vector.png' alt="Brand" className="h-4" />
                   ) : (
-                    <img src='src/assets/Images/Brands/brand-first.png' alt="Brand" className="h-4" />
+                    <img src='/assets/Images/Brands/brand-first.png' alt="Brand" className="h-4" />
                   )}
                 </div>
               ))}

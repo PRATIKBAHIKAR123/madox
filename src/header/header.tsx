@@ -9,7 +9,7 @@ const Header = () => {
           
             
             <img src="/assets/Images/logo.png" alt="Logo" className="hidden md:block h-[94px] w-[75px]" />
-            <img src="src/assets/Images/logo-dark.png" alt="Logo" className="block md:hidden h-[66px] w-[53px]" />
+            <img src="/assets/Images/logo-dark.png" alt="Logo" className="block md:hidden h-[66px] w-[53px]" />
             <div className="hidden md:flex space-x-6">
               <a  className="nav-link">Home</a>
               <a className="nav-link">Properties</a>

@@ -7,21 +7,21 @@ export default function HowWeWorks() {
       number: "01",
       title: "Search for Location",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio.",
-      icon: 'src/assets/Images/Icons/work-icon-1.svg fill.png',
+      icon: '/assets/Images/Icons/work-icon-1.svg fill.png',
       color: "bg-indigo-500"
     },
     {
       number: "02",
       title: "Select Property Type",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio.",
-      icon: 'src/assets/Images/Icons/work-icon-2.svg.png',
+      icon: '/assets/Images/Icons/work-icon-2.svg.png',
       color: "bg-blue-500"
     },
     {
       number: "03",
       title: "Book Your Property",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis et sem sed sollicitudin. Donec non odio.",
-      icon: 'src/assets/Images/Icons/work-icon-3.svg.png',
+      icon: '/assets/Images/Icons/work-icon-3.svg.png',
       color: "bg-emerald-500"
     }
   ];

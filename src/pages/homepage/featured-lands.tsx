@@ -4,9 +4,9 @@ import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselIte
 import { useState } from 'react';
 
 const properties = [
-  { id: 1, name: '155 Dalla Homestay', featured:true, image:'src/assets/Images/Lands/1.png', price: '$1,000,000', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
-  { id: 2, name: 'House In Foxhall Ave', featured:false, image:'src/assets/Images/Lands/banner.png' , price: '$1,200,000', location: '2612 Macarthur Boulevard, Oakland', beds: 4, baths: 3, sqft: 2000 , contact: '91+ 9876543210', postedTime: '5 days ago' },
-  { id: 3, name: 'Villa in St San Francisco', featured:false, image:'src/assets/Images/Lands/3.png', price: '$900,000', location: '2612 Macarthur Boulevard, Oakland', beds: 2, baths: 1, sqft: 1200 , contact: '91+ 9876543210', postedTime: '1 week ago' },
+  { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Lands/1.png', price: '$1,000,000', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
+  { id: 2, name: 'House In Foxhall Ave', featured:false, image:'/assets/Images/Lands/banner.png' , price: '$1,200,000', location: '2612 Macarthur Boulevard, Oakland', beds: 4, baths: 3, sqft: 2000 , contact: '91+ 9876543210', postedTime: '5 days ago' },
+  { id: 3, name: 'Villa in St San Francisco', featured:false, image:'/assets/Images/Lands/3.png', price: '$900,000', location: '2612 Macarthur Boulevard, Oakland', beds: 2, baths: 1, sqft: 1200 , contact: '91+ 9876543210', postedTime: '1 week ago' },
 ];
 
 const FeaturedLands = () => {
@@ -51,14 +51,14 @@ const FeaturedLands = () => {
                   <div className="absolute bottom-3 right-3 flex gap-2">
                     <a className="w-8 h-8 bg-transparent rounded-full flex items-center justify-center text-white">
                       <img 
-                        src={'src/assets/Images/Icons/List.png'} 
+                        src={'/assets/Images/Icons/List.png'} 
                         alt="Property" 
                         className="h-full absolute"
                       />
                     </a>
                     <a className="w-8 h-8 rounded-full flex items-center justify-center text-white">
                       <img 
-                        src={'src/assets/Images/Icons/magnifier.png'} 
+                        src={'/assets/Images/Icons/magnifier.png'} 
                         alt="Property" 
                         className="h-full absolute"
                       />
@@ -72,7 +72,7 @@ const FeaturedLands = () => {
               
                 <div className="w-full h-[42px] bg-[#0798ff]/10 rounded-md flex justify-center items-center">
                   <img 
-                    src={'src/assets/Images/Icons/size2.svg.png'} 
+                    src={'/assets/Images/Icons/size2.svg.png'} 
                     alt="Property" 
                     className="h-[20px] w-[20px]"
                   />

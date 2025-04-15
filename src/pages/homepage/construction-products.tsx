@@ -5,9 +5,9 @@ import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselIte
 import { useState } from 'react';
 
 const products = [
-  { id: 1, name: 'Red Sand Bags', featured:true, image:'src/assets/Images/Lands/construction_material1.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
-    { id: 2, name: 'White Cement Bags', featured:false, image:'src/assets/Images/Lands/construction_material2.jpg' , price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 4, baths: 3, sqft: 2000 , contact: '91+ 9876543210', postedTime: '5 days ago' },
-    { id: 3, name: 'Red Bricks', featured:false, image:'src/assets/Images/Lands/construction_material3.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 2, baths: 1, sqft: 1200 , contact: '91+ 9876543210', postedTime: '1 week ago' },
+  { id: 1, name: 'Red Sand Bags', featured:true, image:'/assets/Images/Lands/construction_material1.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
+    { id: 2, name: 'White Cement Bags', featured:false, image:'/assets/Images/Lands/construction_material2.jpg' , price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 4, baths: 3, sqft: 2000 , contact: '91+ 9876543210', postedTime: '5 days ago' },
+    { id: 3, name: 'Red Bricks', featured:false, image:'/assets/Images/Lands/construction_material3.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 2, baths: 1, sqft: 1200 , contact: '91+ 9876543210', postedTime: '1 week ago' },
 ]
 
 const ConstructionProducts = () => {
@@ -51,7 +51,7 @@ const ConstructionProducts = () => {
                   <div className="absolute bottom-3 right-3 flex gap-2">
                     <a className="w-8 h-8 bg-transparent  rounded-full flex items-center justify-center text-white">
                     <img 
-                    src={'src/assets/Images/Icons/List.png'} 
+                    src={'/assets/Images/Icons/List.png'} 
                     alt="Property" 
                     className="h-full absolute"
                   />
@@ -62,7 +62,7 @@ const ConstructionProducts = () => {
                     </a>
                     <a className="w-8 h-8  rounded-full flex items-center justify-center text-white">
                     <img 
-                    src={'src/assets/Images/Icons/magnifier.png'} 
+                    src={'/assets/Images/Icons/magnifier.png'} 
                     alt="Property" 
                     className="h-full absolute"
                   />
