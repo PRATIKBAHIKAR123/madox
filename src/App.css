@@ -1,0 +1,102 @@
+#root {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.nav-link {
+  color: #b8b8b8;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+[data-slot='card'] img {
+  border-radius: 10px;
+}
+
+[data-slot='card'] .card-image-container {
+  position: relative;
+}
+
+.small-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    color: white;
+    background-position: center;
+    padding: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .title {
+    text-align: center;
+    justify-content: center;
+    color: #0e0e46;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Mulish', sans-serif;
+    line-height: 38.4px;
+  }
+  
+  @media (min-width: 1024px) {
+    .small-banner {
+      height: 450px;
+      padding: 20px;
+    }
+  }
+
+    @media (max-width: 720px) {
+      .small-banner {
+        background-size: auto;
+        padding: 20px;
+      }
+    }
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
