@@ -3,6 +3,7 @@ import { Card } from '../../components/ui/card';
 import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedDots from '@/components/ui/animation';
 
 const properties = [
   { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Properties/house1.jpg', price: '$1,000,000', location: 'New York, NY', beds: 3, baths: 2, sqft: 1500, contact: 'John Doe', postedTime: '2 days ago' },
@@ -23,10 +24,7 @@ const Properties = () => {
         <motion.div initial={{ x: -10, opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 3 }} className="title">Properties for Sales</motion.div>
-        <div className='flex justify-center items-center space-x-2 my-[15px]'>
-          <div className="w-4 h-1.5 bg-[#0070ae] rounded-[30px]" />
-          <div className="w-[46px] h-1.5 bg-[#0070ae] rounded-[30px]" />
-        </div>
+        <AnimatedDots/>
         <div className="text-center justify-center text-[#8a909a] text-lg font-medium font-['Mulish'] leading-[27px]">Hand-Picked selection of quality places</div>
       </div>
 

@@ -2,6 +2,7 @@ import { MapPin } from 'lucide-react';
 import { Card } from '../../components/ui/card';
 import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { useState } from 'react';
+import AnimatedDots from '@/components/ui/animation';
 
 const properties = [
   { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Lands/1.png', price: '$1,000,000', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
@@ -16,10 +17,7 @@ const FeaturedLands = () => {
     <section className="w-full max-w-7xl mx-auto px-4 py-16 relative">
       <div className="text-center mb-12">
         <div className="title">Featured Lands for Sales</div>
-        <div className='flex justify-center items-center space-x-2 my-[15px]'>
-          <div className="w-4 h-1.5 bg-[#0070ae] rounded-[30px]" />
-          <div className="w-[46px] h-1.5 bg-[#0070ae] rounded-[30px]" />
-        </div>
+        <AnimatedDots/>
         <div className="text-center justify-center text-[#8a909a] text-lg font-medium font-['Mulish'] leading-[27px]">Hand-Picked selection of quality Land</div>
       </div>
 

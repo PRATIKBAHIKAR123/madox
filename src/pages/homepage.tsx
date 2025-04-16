@@ -29,7 +29,7 @@ const RealEstateLandingPage = () => {
       initial={{ x: -20, opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 3 }}
-    ><div className="justify-right text-white text-[25px] md:text-[40px] font-extrabold font-['Mulish'] leading-[30px] md:leading-[60px] animate-fade-in-down">Easy Way to Find a<br/>Perfect Property</div></motion.p>
+    ><div className="justify-right text-white text-[25px] md:text-[40px] font-extrabold font-['Mulish'] leading-[30px] md:leading-[60px] animate-fade-in-down px-4">Easy Way to Find a<br/>Perfect Property</div></motion.p>
         <div className="justify-right text-white text-[15px] font-normal font-['Mulish'] leading-7">From as low as $10 per day with limited time offer discounts.</div>
           
         </div>

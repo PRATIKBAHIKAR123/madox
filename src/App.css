@@ -36,6 +36,20 @@
 
 [data-slot='card'] .card-image-container {
   position: relative;
+  img :hover{
+          transform: scale(1.1);
+          transition: transform 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+}
+
+[data-slot='card'] .card-image-container img:hover{
+          transform: scale(1.1);
+          transition: transform 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+.image_zoom :hover{
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
 .small-banner {

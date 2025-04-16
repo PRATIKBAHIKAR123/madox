@@ -1,4 +1,5 @@
 
+import AnimatedDots from "@/components/ui/animation";
 import { Card } from "@/components/ui/card";
 
 export default function HowWeWorks() {
@@ -31,10 +32,7 @@ export default function HowWeWorks() {
       {/* Heading Section */}
       <div className="text-center mb-12">
           <div className="title"> How We Works</div>
-          <div className='flex justify-center items-center space-x-2 my-[15px]'>
-          <div className="w-4 h-1.5 bg-[#0070ae] rounded-[30px]" />
-          <div className="w-[46px] h-1.5 bg-[#0070ae] rounded-[30px]" />
-          </div>
+<AnimatedDots/>
           <div className="text-center justify-center text-[#8a909a] text-lg font-medium font-['Mulish'] leading-[27px]">Follow these 3 steps to book your place</div>
           </div>
 

@@ -69,7 +69,7 @@ const PropertyPortfolio = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px]">
         {propertyCategories.map((category) => (
             <div key={category.id} className={category.gridClass}>
-          <div className="overflow-hidden transition-all duration-300 rounded-[3px] hover:shadow-lg">
+          <div className="overflow-hidden transition-all duration-300 rounded-[3px] hover:shadow-lg image_zoom">
             <div className="relative h-64 w-full overflow-hidden">
               <div 
                 className="absolute inset-0 bg-cover bg-center"
