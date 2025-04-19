@@ -76,6 +76,55 @@
     font-family: 'Mulish', sans-serif;
     line-height: 38.4px;
   }
+
+  .skills_sction{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+  }
+
+  .skill_tag {
+    text-align: left;
+    color: #0070ae;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Public Sans', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.75;
+  }
+
+  .skill_title {
+    color: #00204a;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Public Sans', sans-serif;
+    text-transform: capitalize;
+    line-height: 60px;
+  }
+  
+  .default_btn {
+    background-color: #0070ae;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+  }
+
+  .join_us-banner {
+    background-size: auto;
+    padding: 0px;
+    height: 360px;
+    align-items: center;
+    .bg-opacity{
+      opacity: 0.8;
+      justify-content: center;
+      display: flex
+  ;
+      flex-direction: column;
+    }
+  }
   
   @media (min-width: 1024px) {
     .small-banner {

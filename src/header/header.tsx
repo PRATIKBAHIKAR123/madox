@@ -43,8 +43,8 @@ const Header = () => {
           />
           
           <div className={`hidden md:flex space-x-6 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
-            <a className="nav-link hover:text-blue-400 transition-colors">Home</a>
-            <a className="nav-link hover:text-blue-400 transition-colors">About Us</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/">Home</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/aboutus">About Us</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Our Business</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Real Estate</a>

@@ -24,11 +24,11 @@ export default function ContactUs() {
         </div>
 
         {/* Right side - Content */}
-        <div className="w-full md:w-1/2 space-y-6">
+        <div className="w-full md:w-1/2 space-y-6 text-left">
           <div className="space-y-4">
-            <p className="text-[#0070ae] text-lg font-semibold font-['Mulish'] uppercase ">YOUR BENEFIT</p>
+            <p className="skill_tag ">YOUR BENEFIT</p>
             
-            <h2 className="text-[#00204a] text-[50px] font-bold font-['Mulish'] capitalize">
+            <h2 className="skill_title">
               Expert Services Change Your Business Value
             </h2>
             
@@ -53,7 +53,7 @@ export default function ContactUs() {
 
           {/* Contact Button */}
           <div className="flex justify-center md:justify-start mt-8">
-          <a className="bg-[#0070ae] rounded-[65px] outline outline-2 outline-offset-[-2px] outline-[#0070ae] overflow-hidden px-[18px] py-[10px]">
+          <a className="default_btn">
             <span className="text-white">Contact Us</span>
             </a>
             </div>
