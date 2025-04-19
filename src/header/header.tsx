@@ -44,7 +44,7 @@ const Header = () => {
           
           <div className={`hidden md:flex space-x-6 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
             <a className="nav-link hover:text-blue-400 transition-colors" href="/">Home</a>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/aboutus">About Us</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/aboutus">About Us</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Our Business</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Real Estate</a>
@@ -84,7 +84,7 @@ const Header = () => {
           
           <div className="flex flex-col py-4">
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Home</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">About Us</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/aboutus">About Us</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Our Business</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Current Project</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Real Estate</a>
