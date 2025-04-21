@@ -21,7 +21,8 @@ const Brands = () => {
           <div className='flex justify-center items-center space-x-2 my-[15px]'>
           <div className="w-4 h-1.5 bg-[#0070ae] rounded-[30px]" />
           <div className="w-[46px] h-1.5 bg-[#0070ae] rounded-[30px]" />
-          </div>
+        </div>
+        
           <div className="text-center justify-center text-[#8a909a] text-lg font-medium font-['Mulish'] leading-[27px]">Every day, we build trust through communication, transparency, and results.</div>
           </div>
 
