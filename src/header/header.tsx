@@ -47,7 +47,7 @@ const Header = () => {
             <a className="nav-link hover:text-blue-400 transition-colors" href="/#/aboutus">About Us</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Our Business</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
-            <a className="nav-link hover:text-blue-400 transition-colors">Real Estate</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/property-list">Real Estate</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Our Products</a>
           </div>
           
