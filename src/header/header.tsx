@@ -59,7 +59,7 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
             <a className="nav-link hover:text-blue-400 transition-colors">Our Business</a>
             <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
             <a className="nav-link hover:text-blue-400 transition-colors" href="/#/property-list">Real Estate</a>
-            <a className="nav-link hover:text-blue-400 transition-colors">Our Products</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/products">Our Products</a>
           </div>
           
           <div>
@@ -99,7 +99,7 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Our Business</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Current Project</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Real Estate</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Our Products</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/products">Our Products</a>
           </div>
           
           <div className="mt-auto p-4 border-t">

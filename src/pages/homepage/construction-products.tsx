@@ -1,9 +1,8 @@
-
-
 import AnimatedDots from '@/components/ui/animation';
 import { Card } from '../../components/ui/card';
 import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselItem, } from '@/components/ui/carousel';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const products = [
   { id: 1, name: 'Red Sand Bags', featured:true, image:'/assets/Images/Lands/construction_material1.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
@@ -13,6 +12,12 @@ const products = [
 
 const ConstructionProducts = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const navigate = useNavigate();
+
+  const handleProductClick = (productId: number) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
     
       <section className="w-full max-w-7xl mx-auto px-4 py-16 relative">
@@ -33,7 +38,10 @@ const ConstructionProducts = () => {
       <CarouselContent className='-ml-4 md:mx-[80px]'>
       {products.map((item) => (
           <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4 md:pl-8">
-            <Card  className="overflow-hidden h-full">
+            <Card 
+              className="overflow-hidden h-full cursor-pointer transition-transform hover:scale-105"
+              onClick={() => handleProductClick(item.id)}
+            >
                 <div className='relative card-image-container'>
                 {item.featured && (
                     <div className="absolute top-3 left-3 bg-amber-400 text-white text-xs font-medium py-1 px-2 rounded z-10">
@@ -42,8 +50,8 @@ const ConstructionProducts = () => {
                   )}
                   <img 
                     src={item.image} 
-                    alt="Property" 
-                    className="h-full"
+                    alt={item.name} 
+                    className="h-full w-full object-cover"
                   />
                   
                   <div className="absolute bottom-3 right-3 flex gap-2">

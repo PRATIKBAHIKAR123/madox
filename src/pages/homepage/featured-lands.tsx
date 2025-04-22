@@ -55,14 +55,14 @@ const FeaturedLands = () => {
                       <img 
                         src={'/assets/Images/Icons/List.png'} 
                         alt="Property" 
-                        className="h-full absolute"
+                        className="w-4 h-4"
                       />
                     </a>
                     <a className="w-8 h-8 rounded-full flex items-center justify-center text-white">
                       <img 
                         src={'/assets/Images/Icons/magnifier.png'} 
                         alt="Property" 
-                        className="h-full absolute"
+                        className="w-4 h-4"
                       />
                     </a>
                   </div>
