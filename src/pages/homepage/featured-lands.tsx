@@ -3,6 +3,7 @@ import { Card } from '../../components/ui/card';
 import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { useState } from 'react';
 import AnimatedDots from '@/components/ui/animation';
+import { Button } from '@/components/ui/button';
 
 const properties = [
   { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Lands/1.png', price: '$1,000,000', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
@@ -31,7 +32,10 @@ const FeaturedLands = () => {
         <CarouselContent className='-ml-4 md:mx-[80px]'>
           {properties.map((item) => (
             <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3 px-2 md:px-4">
-              <Card className="overflow-hidden h-full">
+              <Card className="overflow-hidden h-full cursor-pointer" onClick={() => {
+    window.location.href = '/#/land-details';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}>
                 <div className='relative card-image-container'>
                   {item.featured && (
                     <div className="absolute top-3 left-3 bg-amber-400 text-white text-xs font-medium py-1 px-2 rounded z-10">
@@ -91,6 +95,10 @@ const FeaturedLands = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <Button variant={'link'} className='mt-3' onClick={() => {
+    window.location.href = '/#/land-list';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}>View More</Button>
         <div className="flex justify-center mt-8">
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -101,6 +109,7 @@ const FeaturedLands = () => {
             ))}
           </div>
         </div>
+        
       </Carousel>
       
       {/* Use our reusable carousel navigation component */}

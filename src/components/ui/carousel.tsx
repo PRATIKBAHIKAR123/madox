@@ -234,9 +234,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselNavigationProps {
   carouselApi: CarouselApi | null;
+  classname?: string;
 }
 
-const CarouselNavigation = ({ carouselApi }: CarouselNavigationProps) => {
+const CarouselNavigation = ({ carouselApi,classname }: CarouselNavigationProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const scrollToIndex = (index: number) => {
@@ -261,16 +262,16 @@ const CarouselNavigation = ({ carouselApi }: CarouselNavigationProps) => {
   return (
     <>
       {/* Desktop Navigation Arrows */}
-      <Button
+      <Button id="left-btn"
         onClick={() => scrollToIndex(currentIndex - 1)}
-        className="hidden md:block absolute left-0 top-1/2 transform justify-items-center -translate-y-1/2 rounded-full w-8 h-8 p-0 bg-white shadow-lg shadow-[0px_6px_20px_0px_rgba(0,0,0,0.19)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.20)] hover:bg-gray-100"
+        className={`left-btn hidden md:block absolute left-0 top-1/2 transform justify-items-center -translate-y-1/2 rounded-full w-8 h-8 p-0 bg-white shadow-lg shadow-[0px_6px_20px_0px_rgba(0,0,0,0.19)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.20)] hover:bg-gray-100 ${classname}`}
       >
         <ChevronLeft className="w-8 h-8 text-[#121111]" strokeWidth={3.0} />
       </Button>
 
-      <Button
+      <Button id="right-btn"
         onClick={() => scrollToIndex(currentIndex + 1)}
-        className="hidden md:block absolute right-0 top-1/2 transform justify-items-center -translate-y-1/2 rounded-full w-8 h-8 p-0 bg-white shadow-lg shadow-[0px_6px_20px_0px_rgba(0,0,0,0.19)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.20)] hover:bg-gray-100"
+        className={`right-btn hidden md:block absolute right-0 top-1/2 transform justify-items-center -translate-y-1/2 rounded-full w-8 h-8 p-0 bg-white shadow-lg shadow-[0px_6px_20px_0px_rgba(0,0,0,0.19)] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.20)] hover:bg-gray-100 ${classname}`}
       >
         <ChevronRight className="w-8 h-8 text-[#121111]" strokeWidth={3.0} />
       </Button>

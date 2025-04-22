@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { List, X } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  isPagesHeader?: boolean;
+}
+
+const Header = ({ isPagesHeader }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   
@@ -13,13 +17,14 @@ const Header = () => {
         setScrolled(isScrolled);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
+
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -27,9 +32,15 @@ const Header = () => {
   
   return (
     <>
-      <header className={`fixed w-full top-0 z-10 transition-colors duration-300 ${
-        scrolled ? 'bg-white' : 'bg-white md:bg-transparent'
-      }`}>
+       <header
+        className={`fixed w-full top-0 z-10 transition-colors duration-300 ${
+          scrolled
+            ? 'bg-white'
+            : isPagesHeader
+            ? 'bg-white md:bg-[#0070AE]'
+            : 'md:bg-transparent'
+        }`}
+      >
         <nav className="container mx-auto px-4 py-2 flex items-center justify-between md:py-4">
           <img
             src={`${scrolled ? '/assets/Images/logo-dark.png' : '/assets/Images/logo.png'}`}
@@ -53,7 +64,7 @@ const Header = () => {
           
           <div>
             <Button className="hidden md:block text-blue-600 h-12 text-base font-semibold bg-white rounded-full hover:bg-blue-800 hover:text-black px-6 py-2">
-              Contact Us
+             {isPagesHeader? 'Login' : 'Contact Us'}
             </Button>
           </div>
           
@@ -93,7 +104,7 @@ const Header = () => {
           
           <div className="mt-auto p-4 border-t">
             <Button className="w-full text-white bg-blue-600 hover:bg-blue-700">
-              Contact Us
+            {isPagesHeader? 'Login' : 'Contact Us'}
             </Button>
           </div>
         </div>

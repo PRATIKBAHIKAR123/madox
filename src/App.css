@@ -125,6 +125,14 @@
       flex-direction: column;
     }
   }
+
+ .right-btn.carousel-nav-button-right{
+    right:12px !important
+  }
+
+ .left-btn.carousel-nav-button-left{
+    left:12px !important
+  }
   
   @media (min-width: 1024px) {
     .small-banner {
