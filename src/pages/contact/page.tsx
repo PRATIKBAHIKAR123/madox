@@ -11,7 +11,7 @@ const ContactPage = () => {
         {/* Banner Section */}
         <div className="w-full h-[300px] relative mb-8">
           <img 
-            src="/src/assets/Images/Banners/contact.png" 
+            src="/public/assets/Images/contact.png" 
             alt="Contact Banner" 
             className="w-full h-full object-cover"
           />
