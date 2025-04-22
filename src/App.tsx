@@ -1,4 +1,3 @@
-
 import './App.css'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import RealEstateLandingPage from './pages/homepage'
@@ -9,7 +8,7 @@ import LandDetails from './pages/lands/land-details/page';
 import Lands from './pages/lands/page';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import ProductListingPage from './pages/ProductListingPage/ProductListingPage';
-
+import ContactPage from './pages/contact/page';
 
 function App() {
 
@@ -24,6 +23,7 @@ function App() {
         <Route path="/land-details" element={<LandDetails />} />
         <Route path="/products" element={<ProductListingPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   )

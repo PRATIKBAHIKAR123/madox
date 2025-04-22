@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { List, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   isPagesHeader?: boolean;
@@ -9,6 +10,7 @@ interface HeaderProps {
 const Header = ({ isPagesHeader }: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +27,10 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
     };
   }, [scrolled]);
 
+  const handleContactClick = () => {
+    navigate('/contact');
+    setSidebarOpen(false);
+  };
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -32,7 +38,7 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
   
   return (
     <>
-       <header
+      <header
         className={`fixed w-full top-0 z-10 transition-colors duration-300 ${
           scrolled
             ? 'bg-white'
@@ -60,11 +66,15 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
             <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
             <a className="nav-link hover:text-blue-400 transition-colors" href="/#/property-list">Real Estate</a>
             <a className="nav-link hover:text-blue-400 transition-colors" href="/#/products">Our Products</a>
+            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/contact">Contact</a>
           </div>
           
           <div>
-            <Button className="hidden md:block text-blue-600 h-12 text-base font-semibold bg-white rounded-full hover:bg-blue-800 hover:text-black px-6 py-2">
-             {isPagesHeader? 'Login' : 'Contact Us'}
+            <Button 
+              onClick={handleContactClick}
+              className="hidden md:block text-blue-600 h-12 text-base font-semibold bg-white rounded-full hover:bg-blue-800 hover:text-black px-6 py-2"
+            >
+              {isPagesHeader ? 'Login' : 'Contact Us'}
             </Button>
           </div>
           
@@ -78,7 +88,7 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
       </header>
 
       {/* Mobile Sidebar */}
-      <div className={`fixed inset-y-0 right-0 z-2000 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+      <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-20 ${
         sidebarOpen ? 'translate-x-0' : 'translate-x-full'
       } md:hidden`}>
         <div className="flex flex-col h-full">
@@ -94,17 +104,21 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
           </div>
           
           <div className="flex flex-col py-4">
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Home</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/">Home</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/aboutus">About Us</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Our Business</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Current Project</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Real Estate</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/property-list">Real Estate</a>
             <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/products">Our Products</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/contact">Contact</a>
           </div>
           
           <div className="mt-auto p-4 border-t">
-            <Button className="w-full text-white bg-blue-600 hover:bg-blue-700">
-            {isPagesHeader? 'Login' : 'Contact Us'}
+            <Button 
+              onClick={handleContactClick}
+              className="w-full text-white bg-blue-600 hover:bg-blue-700"
+            >
+              {isPagesHeader ? 'Login' : 'Contact Us'}
             </Button>
           </div>
         </div>
