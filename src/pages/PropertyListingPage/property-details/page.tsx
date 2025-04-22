@@ -14,7 +14,7 @@ const PropertyDetails = () => {
   return (
     <>
     <Header isPagesHeader={true}/>
-    <div className="flex flex-col min-h-screen bg-[#F5F5F5]">
+    <div className="flex flex-col min-h-screen   mt-12 md:mt-34 bg-[#F5F5F5]">
       {/* Banner section */}
       <div className="w-full">
         <PropertyBanners />
