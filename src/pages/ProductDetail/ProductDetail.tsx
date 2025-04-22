@@ -233,11 +233,11 @@ const ProductDetail = () => {
             <div className="max-w-[1000px] mx-auto">
               {activeTab === 'description' && (
                 <div className="space-y-8">
-                  <p className="text-[15px] leading-7 text-gray-800">
+                  <p className="text-[15px] leading-7 text-gray-800 text-left">
                     The {product.name} is the best all-around product we've tested. Although all similar products deliver fantastic quality, this one stands out for its value because it has many features that are great for customers.
                   </p>
                   
-                  <div className="space-y-4 text-[13px] leading-5 text-gray-600">
+                  <div className="space-y-4 text-[13px] leading-7 text-gray-600 text-left">
                     <p className="flex items-start">
                       <span className="text-xs align-top">*</span>
                       <span className="ml-1">Only 65C2 is shown in the image for example purposes. All 2022 models feature eco-friendly packaging.</span>

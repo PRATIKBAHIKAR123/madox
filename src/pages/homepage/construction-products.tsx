@@ -59,7 +59,7 @@ const ConstructionProducts = () => {
                     <img 
                     src={'/assets/Images/Icons/List.png'} 
                     alt="Property" 
-                    className="h-full absolute"
+                    className="w-4 h-4"
                   />
                       {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 20.25H5.25C5.05109 20.25 4.86032 20.171 4.71967 20.0303C4.57902 19.8897 4.5 19.6989 4.5 19.5V6C4.5 5.80109 4.57902 5.61032 4.71967 5.46967C4.86032 5.32902 5.05109 5.25 5.25 5.25H7.5V3.75H9V5.25H15V3.75H16.5V5.25H18.75C18.9489 5.25 19.1397 5.32902 19.2803 5.46967C19.421 5.61032 19.5 5.80109 19.5 6V13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -70,7 +70,7 @@ const ConstructionProducts = () => {
                     <img 
                     src={'/assets/Images/Icons/magnifier.png'} 
                     alt="Property" 
-                    className="h-full absolute"
+                    className="w-4 h-4"
                   />
                       {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
