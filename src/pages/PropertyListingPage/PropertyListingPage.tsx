@@ -3,11 +3,13 @@ import { Card } from '@/components/ui/card';
 import { properties } from '../../data/properties';
 import Header from '@/header/header';
 import Footer from '@/header/footer';
+import { useNavigate } from 'react-router-dom';
 import './PropertyListingPage.css';
 
 const PropertyListingPage: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const propertiesPerPage = 9;
+    const navigate = useNavigate();
 
     // Calculate pagination
     const indexOfLastProperty = currentPage * propertiesPerPage;
@@ -17,6 +19,19 @@ const PropertyListingPage: React.FC = () => {
 
     const handlePageChange = (pageNumber: number) => {
         setCurrentPage(pageNumber);
+    };
+
+    const handleCardClick = (property: any) => {
+        // Transform the property data to match the expected structure
+        const transformedProperty = {
+            ...property,
+            name: property.title,
+            location: property.address,
+            sqft: property.size,
+            contact: property.contact,
+            price: `$${property.price.toLocaleString()}`
+        };
+        navigate('/property-details', { state: { property: transformedProperty } });
     };
 
     return (
@@ -37,7 +52,8 @@ const PropertyListingPage: React.FC = () => {
                         {currentProperties.map((property) => (
                             <Card 
                                 key={property.id} 
-                                className="overflow-hidden cursor-pointer"
+                                className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                                onClick={() => handleCardClick(property)}
                             >
                                 <div className="relative card-image-container">
                                     <img 

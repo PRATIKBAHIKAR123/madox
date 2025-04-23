@@ -1,13 +1,17 @@
 import { Heart, Plus, Share2, Printer } from "lucide-react";
 
-export default function PriceCard() {
+interface PriceCardProps {
+  price: string;
+}
+
+const PriceCard: React.FC<PriceCardProps> = ({ price }) => {
   return (
     <div className="w-full max-w-md p-4 border bg-white">
       {/* Price Row */}
       <div className="flex items-end justify-between">
         <div className="text-lg font-semibold">Price:</div>
         <div className="text-2xl font-bold text-black">
-          2,200<span className="text-lg font-normal text-gray-500 ml-1">$</span>
+          {price}
           <span className="text-base font-normal text-gray-500 ml-1">/month</span>
         </div>
       </div>
@@ -36,4 +40,6 @@ export default function PriceCard() {
       </div>
     </div>
   );
-}
+};
+
+export default PriceCard;

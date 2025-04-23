@@ -1,5 +1,3 @@
-
-
 import Properties from './homepage/properties';
 import SmallbannerSection from './homepage/smallbanner';
 import FeaturedLands from './homepage/featured-lands';
@@ -36,7 +34,9 @@ const RealEstateLandingPage = () => {
       </section>
 
       {/* Featured Properties */}
-      <Properties />
+      <div id="properties-section">
+        <Properties />
+      </div>
 
       {/* Property Categories */}
       <SmallbannerSection
@@ -51,7 +51,9 @@ const RealEstateLandingPage = () => {
       {/* Recent Blog Posts */}
       <FeaturedLands/>
       
-      <PropertyPortfolio/>
+      <div id="portfolio-section">
+        <PropertyPortfolio/>
+      </div>
       <ConstructionProducts/>
       <ContactUs/>
 

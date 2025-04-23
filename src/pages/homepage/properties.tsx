@@ -4,6 +4,8 @@ import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselIte
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import AnimatedDots from '@/components/ui/animation';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const properties = [
   { id: 1, name: '155 Dalla Homestay', featured:true, image:'/assets/Images/Properties/house1.jpg', price: '$1,000,000', location: 'New York, NY', beds: 3, baths: 2, sqft: 1500, contact: 'John Doe', postedTime: '2 days ago' },
@@ -13,6 +15,7 @@ const properties = [
 
 const Properties = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const navigate = useNavigate();
 
   return (
     <motion.section 
@@ -38,7 +41,7 @@ const Properties = () => {
         <CarouselContent className='-ml-4 md:mx-[80px]'>
           {properties.map((item) => (
             <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3 px-2 md:px-4">
-              <Card className="overflow-hidden h-full">
+              <Card className="overflow-hidden h-full cursor-pointer" onClick={() => navigate('/property-details', { state: { property: item } })}>
                 <div className='relative card-image-container'>
                   {item.featured && (
                     <div className="absolute top-3 left-3 bg-amber-400 text-white text-xs font-medium py-1 px-2 rounded z-10">
@@ -131,6 +134,19 @@ const Properties = () => {
           </div>
         </div>
       </Carousel>
+      
+      <div className="flex justify-center mt-8">
+        <Button 
+          variant="link" 
+          className="text-blue-600 hover:text-blue-800" 
+          onClick={() => {
+            window.location.href = '/#/property-list';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          View More
+        </Button>
+      </div>
       
       {/* Use our reusable carousel navigation component */}
       {carouselApi && <CarouselNavigation carouselApi={carouselApi} />}

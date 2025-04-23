@@ -2,13 +2,17 @@ import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselIte
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+interface PropertyBannersProps {
+  image: string;
+}
+
 const properties = [
   { id: 1, image:'/assets/Images/Properties/Rectangle 19 (3).png' },
   { id: 2, image:'/assets/Images/Properties/Rectangle 19.png' },
   { id: 3, image:'/assets/Images/Properties/Rectangle 19 (1).png' },
 ];
 
-const PropertyBanners = () => {
+const PropertyBanners: React.FC<PropertyBannersProps> = ({  }) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   
   return (

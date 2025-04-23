@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* General Inquiries Section */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">General Inquiries</h3>
+            <h3 className="font-semibold text-lg text-left mb-4">General Inquiries</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="mr-2" />

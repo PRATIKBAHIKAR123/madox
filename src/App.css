@@ -19,7 +19,8 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.nav-link {
+/* Removing conflicting nav-link styles */
+/* .nav-link {
   color: #b8b8b8;
   font-size: 15px;
   font-weight: 600;
@@ -28,7 +29,7 @@
 
 .nav-link:hover {
   color: white;
-}
+} */
 
 [data-slot='card'] img {
   border-radius: 10px;

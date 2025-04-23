@@ -27,8 +27,38 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
     };
   }, [scrolled]);
 
-  const handleContactClick = () => {
-    navigate('/contact');
+  // const handleContactClick = () => {
+  //   navigate('/contact');
+  //   setSidebarOpen(false);
+  // };
+
+  const scrollToPortfolio = () => {
+    const portfolioSection = document.getElementById('portfolio-section');
+    if (portfolioSection) {
+      const headerHeight = 80; // Approximate header height in pixels
+      const elementPosition = portfolioSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setSidebarOpen(false);
+  };
+
+  const scrollToProperties = () => {
+    const propertiesSection = document.getElementById('properties-section');
+    if (propertiesSection) {
+      const headerHeight = 80; // Approximate header height in pixels
+      const elementPosition = propertiesSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
     setSidebarOpen(false);
   };
 
@@ -48,34 +78,36 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
         }`}
       >
         <nav className="container mx-auto px-4 py-2 flex items-center justify-between md:py-4">
-          <img
-            src={`${scrolled ? '/assets/Images/logo-dark.png' : '/assets/Images/logo.png'}`}
-            alt="Logo"
-            className="hidden md:block h-24 w-auto"
-          />
-          <img
-            src="/assets/Images/logo-dark.png"
-            alt="Logo"
-            className="block md:hidden h-12 w-auto"
-          />
+          <div onClick={() => navigate('/')} className="cursor-pointer">
+            <img
+              src={`${scrolled ? '/assets/Images/logo-dark.png' : '/assets/Images/logo.png'}`}
+              alt="Logo"
+              className="hidden md:block h-24 w-auto"
+            />
+            <img
+              src="/assets/Images/logo-dark.png"
+              alt="Logo"
+              className="block md:hidden h-12 w-auto"
+            />
+          </div>
           
           <div className={`hidden md:flex space-x-6 ${scrolled ? 'text-gray-800' : 'text-white'}`}>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/">Home</a>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/aboutus">About Us</a>
-            <a className="nav-link hover:text-blue-400 transition-colors">Our Business</a>
-            <a className="nav-link hover:text-blue-400 transition-colors">Current Project</a>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/property-list">Real Estate</a>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/products">Our Products</a>
-            <a className="nav-link hover:text-blue-400 transition-colors" href="/#/contact">Contact</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base" href="/">Home</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base" href="/#/aboutus">About Us</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base cursor-pointer" onClick={scrollToProperties}>Our Business</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base cursor-pointer" onClick={scrollToPortfolio}>Current Project</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base" href="/#/property-list">Real Estate</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base" href="/#/products">Our Products</a>
+            <a className="hover:text-blue-400 transition-colors font-semibold text-base" href="/#/contact">Contact</a>
           </div>
           
           <div>
-            <Button 
+            {/* <Button 
               onClick={handleContactClick}
               className="hidden md:block text-blue-600 h-12 text-base font-semibold bg-white rounded-full hover:bg-blue-800 hover:text-black px-6 py-2"
             >
               {isPagesHeader ? 'Login' : 'Contact Us'}
-            </Button>
+            </Button> */}
           </div>
           
           <Button 
@@ -104,22 +136,22 @@ const Header = ({ isPagesHeader }: HeaderProps) => {
           </div>
           
           <div className="flex flex-col py-4">
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/">Home</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/aboutus">About Us</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Our Business</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors">Current Project</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/property-list">Real Estate</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/products">Our Products</a>
-            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors" href="/#/contact">Contact</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" href="/">Home</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" href="/#/aboutus">About Us</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" onClick={scrollToProperties}>Our Business</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" onClick={scrollToPortfolio}>Current Project</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" href="/#/property-list">Real Estate</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" href="/#/products">Our Products</a>
+            <a className="px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors font-bold text-base" href="/#/contact">Contact</a>
           </div>
           
           <div className="mt-auto p-4 border-t">
-            <Button 
+            {/* <Button 
               onClick={handleContactClick}
               className="w-full text-white bg-blue-600 hover:bg-blue-700"
             >
               {isPagesHeader ? 'Login' : 'Contact Us'}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
