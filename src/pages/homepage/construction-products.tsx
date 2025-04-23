@@ -3,6 +3,7 @@ import { Card } from '../../components/ui/card';
 import CarouselNavigation, { Carousel, CarouselApi, CarouselContent, CarouselItem, } from '@/components/ui/carousel';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const products = [
   { id: 1, name: 'Red Sand Bags', featured:true, image:'/assets/Images/Lands/construction_material1.jpg', price: '$125,400/ Kg', location: '2612 Macarthur Boulevard, Oakland', beds: 3, baths: 2, sqft: 1500, contact: '91+ 9876543210', postedTime: '2 days ago' },
@@ -93,19 +94,20 @@ const ConstructionProducts = () => {
         ))}
       </CarouselContent>
       <div className="flex justify-center mt-8">
-          <div className="flex gap-2">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div 
-                key={i} 
-                className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-blue-600' : 'bg-gray-300'}`}
-              ></div>
-            ))}
-          </div>
-        </div>
-        
+        <Button 
+          variant="link" 
+          className="text-blue-600 hover:text-blue-800" 
+          onClick={() => {
+            window.location.href = '/#/products';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          View More
+        </Button>
+      </div>
     </Carousel>
-                {/* Use our reusable carousel navigation component */}
-      {carouselApi && <CarouselNavigation carouselApi={carouselApi} />}
+    {/* Use our reusable carousel navigation component */}
+    {carouselApi && <CarouselNavigation carouselApi={carouselApi} />}
 
         
       </section>
