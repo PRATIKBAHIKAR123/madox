@@ -3,10 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Star } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import Header from '@/header/header';
 import Footer from '@/header/footer';
 import { Card } from "@/components/ui/card";
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 // Mock products data - in a real app, this would come from an API
 const productsData = [
@@ -75,6 +76,7 @@ const ProductDetail = () => {
   const [selectedSize, setSelectedSize] = useState('small');
   const [activeTab, setActiveTab] = useState('description');
   const navigate = useNavigate();
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   // Find the product based on the ID from the URL
   const product = productsData.find(p => p.id === Number(id)) || productsData[0];
@@ -87,112 +89,126 @@ const ProductDetail = () => {
     { value: 'xxl', label: 'XXL' }
   ];
 
+  const nextImage = () => {
+    setSelectedImage((prev) => (prev + 1) % product.images.length);
+  };
+
+  const prevImage = () => {
+    setSelectedImage((prev) => (prev - 1 + product.images.length) % product.images.length);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header isPagesHeader={true} />
-      <div className="container mx-auto px-4 py-8 max-w-7xl mt-28">
+      <div className="container mx-auto px-4 py-8 max-w-7xl mt-28 md:mt-28 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Product Images Section */}
           <div className="flex gap-6">
-            {/* Thumbnails */}
-            <div className="flex flex-col gap-4 w-24">
-              {product.images.map((image, index) => (
-                <div
-                  key={index}
-                  className={`w-24 h-24 border-2 rounded-lg cursor-pointer overflow-hidden ${
-                    selectedImage === index ? 'border-blue-500' : 'border-gray-200'
-                  }`}
-                  onClick={() => setSelectedImage(index)}
-                >
+            {!isMobile ? (
+              <>
+                {/* Desktop Layout */}
+                <div className="flex flex-col gap-4 w-24">
+                  {product.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={`w-24 h-24 border-2 rounded-lg cursor-pointer overflow-hidden ${
+                        selectedImage === index ? 'border-blue-500' : 'border-gray-200'
+                      }`}
+                      onClick={() => setSelectedImage(index)}
+                    >
+                      <img
+                        src={image}
+                        alt={`${product.name} view ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="flex-1">
+                  <div className="aspect-square rounded-lg overflow-hidden">
+                    <img
+                      src={product.images[selectedImage]}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </>
+            ) : (
+              // Mobile Layout
+              <div className="w-full relative">
+                <div className="aspect-square rounded-lg overflow-hidden">
                   <img
-                    src={image}
-                    alt={`${product.name} view ${index + 1}`}
+                    src={product.images[selectedImage]}
+                    alt={product.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-              ))}
-            </div>
-            {/* Main Image */}
-            <div className="flex-1">
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
-                  src={product.images[selectedImage]}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center shadow-md"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center shadow-md"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Product Info Section */}
-          <div className="space-y-6">
+          <div className="space-y-6 px-4 md:px-0">
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <p className="text-gray-600 mb-2">Brand: {product.brand}</p>
-                  <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+              <div className="flex flex-col mb-2">
+                <div className="flex items-center justify-between mb-1">
+                  <h5 className="text-2xl md:text-3xl font-bold text-gray-900">{product.name}</h5>
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, index) => (
+                      <Star
+                        key={index}
+                        className={`w-4 h-4 md:w-5 md:h-5 ${
+                          index < product.rating ? 'fill-red-500 text-red-500' : 'fill-gray-200 text-gray-200'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, index) => (
-                    <Star
-                      key={index}
-                      className={`w-5 h-5 ${
-                        index < product.rating ? 'fill-red-500 text-red-500' : 'fill-gray-200 text-gray-200'
-                      }`}
-                    />
-                  ))}
-                </div>
+                <p className="text-left text-gray-600 text-sm md:text-base">Brand: {product.brand}</p>
               </div>
             </div>
 
-            <div className="space-y-3">
-              {product.features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                  <p className="text-gray-700">{feature}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="pt-4">
+            <div className="pt-2 md:pt-4">
               <div className="flex items-center gap-6 mb-4">
-                <h2 className="text-4xl font-bold text-[#1100ff]">${product.price.toLocaleString()} <span className="text-2xl">/ Kg</span></h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1100ff]">
+                  ${(product.price/125.4).toFixed(0)} <span className="text-xl md:text-2xl">/ Kg</span>
+                </h2>
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-left text-xs md:text-sm text-gray-600">
                 <span className="text-green-600 font-medium">{product.recommendationPercentage}%</span> of buyers have recommended this
               </div>
             </div>
 
-            <div className="pt-4">
-              <h3 className="text-lg font-semibold mb-4">Choose a Size</h3>
+            <div className="pt-2 md:pt-4">
+              <h3 className="text-base md:text-lg mb-4">Choose a Size</h3>
               <RadioGroup
                 defaultValue={selectedSize}
                 onValueChange={setSelectedSize}
-                className="flex flex-wrap gap-4"
+                className="flex flex-row flex-wrap gap-4"
               >
                 {sizes.map((size) => (
                   <div key={size.value} className="flex items-center space-x-2">
-                    <div className="relative">
-                      <RadioGroupItem
-                        value={size.value}
-                        id={size.value}
-                        className="peer sr-only"
-                      />
-                      <Label
-                        htmlFor={size.value}
-                        className="flex items-center justify-center px-6 py-2 border-2 rounded-full cursor-pointer
-                          peer-data-[state=checked]:border-blue-500 peer-data-[state=checked]:text-blue-500
-                          hover:border-blue-200"
-                      >
-                        {size.label}
-                      </Label>
-                    </div>
+                    <RadioGroupItem value={size.value} id={size.value} className="text-blue-500" />
+                    <Label htmlFor={size.value} className="text-gray-700">{size.label}</Label>
                   </div>
                 ))}
               </RadioGroup>
             </div>
 
-            <Button className="w-full bg-[#0798ff] hover:bg-blue-600 text-white py-6 text-lg font-semibold rounded-md mt-8">
+            <Button className="w-full bg-[#0798ff] hover:bg-blue-600 text-white py-4 md:py-6 text-base md:text-lg font-semibold rounded-md mt-6 md:mt-8">
               Enquire Now For More
             </Button>
           </div>
@@ -234,26 +250,14 @@ const ProductDetail = () => {
               {activeTab === 'description' && (
                 <div className="space-y-8">
                   <p className="text-[15px] leading-7 text-gray-800 text-left">
-                    The {product.name} is the best all-around product we've tested. Although all similar products deliver fantastic quality, this one stands out for its value because it has many features that are great for customers.
+                    Our premium White Cement Bags offer superior quality and consistency for all your construction needs. Perfect for decorative and architectural applications, this cement delivers excellent workability and durability.
                   </p>
                   
                   <div className="space-y-4 text-[13px] leading-7 text-gray-600 text-left">
-                    <p className="flex items-start">
-                      <span className="text-xs align-top">*</span>
-                      <span className="ml-1">Only 65C2 is shown in the image for example purposes. All 2022 models feature eco-friendly packaging.</span>
-                    </p>
-                    <p className="flex items-start">
-                      <span className="text-xs align-top">**</span>
-                      <span className="ml-1">65C2 Stand model is at a minimum 39% lighter than the C1 series.</span>
-                    </p>
-                    <p className="flex items-start">
-                      <span className="text-xs align-top">***</span>
-                      <span className="ml-1">The 'Reducing CO2' footprint label applies to 65C2 only. All other C2 models feature a 'CO2 Measured' label.</span>
-                    </p>
-                    <p className="flex items-start">
-                      <span className="text-xs align-top">****</span>
-                      <span className="ml-1">UL ECO certification based on frame and back cover. Percentage of recycled content varies by model and size.</span>
-                    </p>
+                    <p>• High early strength development</p>
+                    <p>• Excellent workability and finish</p>
+                    <p>• Consistent quality and color</p>
+                    <p>• Ideal for architectural and decorative work</p>
                   </div>
                 </div>
               )}
