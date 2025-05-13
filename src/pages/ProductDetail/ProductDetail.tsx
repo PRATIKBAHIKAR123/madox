@@ -100,7 +100,7 @@ const ProductDetail = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header isPagesHeader={true} />
-      <div className="container mx-auto px-4 py-8 max-w-7xl mt-28 md:mt-28 mt-16">
+      <div className="container mx-auto px-4 py-8 max-w-7xl mt-28 md:mt-38 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Product Images Section */}
           <div className="flex gap-6">
